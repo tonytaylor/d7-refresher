@@ -14,8 +14,4 @@ class CanaryTest extends TestCase {
   public function testSimpleAddition() {
     $this->assertEquals(4, 2 + 2, 'simple addition.');
   }
-
-  public function testFailed() {
-    $this->assertNotEquals('foo', 'BAR');
-  }
 }
