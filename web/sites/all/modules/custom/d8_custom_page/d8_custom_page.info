@@ -1,0 +1,6 @@
+name = A Custom Route
+description = A page rendering the output of custom logic
+core = 7.x
+;dependencies[] = drupal:simpletest
+dependencies[] = drupal:system (>= 7.40)
+;files[] = d8_custom_page.test

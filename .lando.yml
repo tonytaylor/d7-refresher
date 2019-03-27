@@ -1,0 +1,17 @@
+
+name: d8-test-labs
+recipe: drupal7
+proxy:
+  mailhog:
+    - mail.lamp.lndo.site
+services:
+  mailhog:
+    type: mailhog
+    hogfrom:
+      - appserver
+config:
+  webroot: web
+  database: mariadb
+  php: 7.2
+  xdebug: true
+  drush: ^8

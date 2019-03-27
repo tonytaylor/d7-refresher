@@ -1,0 +1,23 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: tony
+ * Date: 3/23/19
+ * Time: 10:20 PM
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function d8_custom_page_menu() {
+  $items['foo'] = array(
+    'page callback' => 'd8_custom_page_foo',
+    'access arguments' => array( 'access content' )
+  );
+  return $items;
+}
+
+function d8_custom_page_foo() {
+  drupal_set_message('foo');
+  return "<h1>bar</h1>";
+}

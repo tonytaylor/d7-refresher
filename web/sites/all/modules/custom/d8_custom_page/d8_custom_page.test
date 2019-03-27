@@ -1,0 +1,27 @@
+<?php
+
+class SimpleTestCustomPageTestCase extends DrupalUnitTestCase {
+  public static function getInfo() {
+    return array(
+      'name' => 'Custom Page Unit Tests',
+      'description' => 'unit tests for custom page',
+      'group' => 'Modules'
+    );
+  }
+
+  public function setUp() {
+    drupal_load('module', 'd8_custom_page');
+    parent::setUp();
+  }
+
+  public function testCustomPageFooFunction() {
+    $message = 'calling the "foo" function returns an HTML H1 tag containing "bar".';
+    $output = d8_custom_page_foo();
+    $this->assertEqual($output, '<h1>bar</h1>', $message);
+  }
+
+  public function testCustomPageCanary() {
+    $message = 'simple addition operation.';
+    $this->assertEqual(2 + 2, 4, $message);
+  }
+}
