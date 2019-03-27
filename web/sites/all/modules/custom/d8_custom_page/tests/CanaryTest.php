@@ -16,6 +16,6 @@ class CanaryTest extends TestCase {
   }
 
   public function testFailed() {
-    $this->assertEquals('foo', 'foo');
+    $this->assertNotEquals('foo', 'BAR');
   }
 }
