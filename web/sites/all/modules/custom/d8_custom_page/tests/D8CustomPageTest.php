@@ -37,9 +37,4 @@ class D8CustomPageTest extends TestCase {
     $output = d8_custom_page_foo();
     $this->assertEquals($output, '<h1>bar</h1>', $message);
   }
-
-  public function testCustomPageCanary() {
-    $message = 'simple addition operation.';
-    $this->assertEquals(2 + 2, 4, $message);
-  }
 }
