@@ -23,6 +23,6 @@ class D8CustomPageTest extends TestCase {
 
   public function testCustomPageCanary() {
     $message = 'simple addition operation.';
-    $this->assertEqual(2 + 2, 4, $message);
+    $this->assertEqual(2 + 2, 5, $message);
   }
 }
