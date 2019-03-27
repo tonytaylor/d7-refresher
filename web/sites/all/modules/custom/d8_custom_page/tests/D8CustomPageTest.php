@@ -37,4 +37,9 @@ class D8CustomPageTest extends TestCase {
     $output = d8_custom_page_foo();
     $this->assertEquals($output, '<h1>bar</h1>', $message);
   }
+
+  public function testCustomPageBarFunction() {
+    $msg = 'returns HTML H2 tag containing "foo".';
+    $this->assertEquals(d8_custom_page_bar(), '<h2>foo</h2>', $msg);
+  }
 }
