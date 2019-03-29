@@ -1,6 +1,8 @@
 pipeline:
   build:
     image: t2/d7-apache
+    depends_on:
+      - maria-server
     commands:
       - composer install
       - cd web && ../vendor/bin/drush cc all
