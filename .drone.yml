@@ -1,0 +1,20 @@
+pipeline:
+  build:
+    image: t2/d7-apache:7.63
+    commands:
+      - composer install
+      - cd web && ../vendor/bin/drush cc all
+
+services:
+  maria-server:
+    image: mariadb:latest
+    container_name: d7-mariadb
+    environment:
+      MYSQL_DATABASE:  drupal
+      MYSQL_ROOT_PASSWORD: drupal
+    volumes:
+        - mysqldata:/var/lib/mysql
+    restart: always
+
+volumes:
+  mysqldata

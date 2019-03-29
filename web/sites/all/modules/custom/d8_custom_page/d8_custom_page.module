@@ -10,15 +10,14 @@
  * Implements hook_menu().
  */
 function d8_custom_page_menu() {
-  $items['foo'] = array(
+  $items['foo'] = [
     'page callback' => 'd8_custom_page_foo',
-    'access arguments' => array( 'access content' )
-  );
+    'access arguments' => [ 'access content' ]
+  ];
   return $items;
 }
 
 function d8_custom_page_foo() {
-  drupal_set_message('foo');
   return "<h1>bar</h1>";
 }
 
