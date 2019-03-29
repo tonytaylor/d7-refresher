@@ -1,6 +1,6 @@
 pipeline:
   build:
-    image: t2/d7-apache:7.63
+    image: t2/d7-apache
     commands:
       - composer install
       - cd web && ../vendor/bin/drush cc all
