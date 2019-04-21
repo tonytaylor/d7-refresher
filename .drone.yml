@@ -1,11 +1,14 @@
 pipeline:
   build:
-    image: t2/d7-apache
-    depends_on:
-      - maria-server
+    image: tonetaylor/d7-apache
     commands:
+      - sleep 20
       - composer install
-      - cd web && ../vendor/bin/drush cc all
+      - cd web
+      - ../vendor/bin/drush si standard \
+        --db-url=mysql://maria-server:3306/drupal --yes
+      - ../vendor/bin/drush en d8_custom_page --yes
+      - cd .. && vendor/bin/phpunit
 
 services:
   maria-server:
@@ -16,5 +19,3 @@ services:
       MYSQL_ROOT_PASSWORD: drupal
     restart: always
 
-volumes:
-  mysqldata
